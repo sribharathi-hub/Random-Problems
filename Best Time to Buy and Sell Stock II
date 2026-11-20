@@ -1,0 +1,22 @@
+class Solution {
+    public int maxProfit(int[] prices) {
+        int p=0;
+        int sum=0;
+        for(int i=0;i<prices.length-1;i++)
+        {
+            int t=prices[i];
+            int tn=prices[i+1];
+            
+            if(t<tn)
+            {
+                p=tn-t;
+                sum+=p;
+            }
+            if(t>tn)
+            {
+                continue;
+            }
+        }
+        return sum;
+    }
+}
